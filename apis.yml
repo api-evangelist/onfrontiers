@@ -1,7 +1,28 @@
 aid: onfrontiers
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/onfrontiers.png
 name: OnFrontiers
-description: OnFrontiers is a company surfaced as a portfolio company of techstars and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  OnFrontiers is the first and largest expert network for U.S. federal
+  contractors, an Expertise Intelligence Platform connecting government
+  contractors with 17,000+ subject matter experts and growth professionals
+  across 1,300+ federal agencies to win and execute more government contracts.
+  Engagements range from one-hour consultations to multi-month projects, with a
+  92% project success rate across 6,000+ engagements, and the platform is
+  integrated with GovTribe's contractor intelligence tools. Added to the API
+  Evangelist network as a techstars portfolio lead; this enrichment pass found
+  no public developer API surface (no developer portal, OpenAPI, SDKs, or public
+  well-known discovery documents), but the provider does publish a real llms.txt.
 url: https://raw.githubusercontent.com/api-evangelist/onfrontiers/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +32,16 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Expert Network
+- Federal Contracting
+- GovCon
+- Government
+- Consulting
+- Marketplace
+- Knowledge
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,3 +51,26 @@ maintainers:
 common:
 - type: Website
   url: https://onfrontiers.com/
+- type: Login
+  url: https://app.onfrontiers.com/login
+- type: SignUp
+  url: https://app.onfrontiers.com/signup/expert
+- type: Blog
+  url: https://www.onfrontiers.com/blog
+- type: HelpCenter
+  url: https://try.onfrontiers.com/knowledge
+- type: TermsOfService
+  url: https://onfrontiers.com/policies/terms-of-service
+- type: PrivacyPolicy
+  url: https://onfrontiers.com/policies/privacy-policy
+- type: LLMsTxt
+  url: llms/onfrontiers-llms.txt
+- type: WellKnown
+  url: well-known/onfrontiers-well-known.yml
+- type: DomainSecurity
+  url: security/onfrontiers-domain-security.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 3
+  pass: local-v1

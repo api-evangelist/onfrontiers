@@ -1,0 +1,51 @@
+generated: '2026-07-20'
+method: probed
+source: live HTTP probes of onfrontiers.com, www.onfrontiers.com, app.onfrontiers.com, support.onfrontiers.com
+note: >-
+  No real .well-known documents are published. The app.onfrontiers.com host
+  returns HTTP 200 for arbitrary /.well-known/* paths, but the body is the
+  single-page-app catch-all (index.html titled "Access"), not a valid
+  openid-configuration / oauth-authorization-server / api-catalog document.
+  Those are recorded as soft-200s (real: false). A real llms.txt IS published
+  (see llms/onfrontiers-llms.txt).
+probes:
+- path: /.well-known/security.txt
+  host: onfrontiers.com
+  status: 404
+  real: false
+- path: /.well-known/openid-configuration
+  host: onfrontiers.com
+  status: 404
+  real: false
+- path: /.well-known/oauth-authorization-server
+  host: onfrontiers.com
+  status: 404
+  real: false
+- path: /.well-known/api-catalog
+  host: onfrontiers.com
+  status: 404
+  real: false
+- path: /.well-known/ai-plugin.json
+  host: onfrontiers.com
+  status: 404
+  real: false
+- path: /.well-known/openid-configuration
+  host: app.onfrontiers.com
+  status: 200
+  real: false
+  reason: SPA catch-all returns index.html, not a discovery document
+- path: /.well-known/oauth-authorization-server
+  host: app.onfrontiers.com
+  status: 200
+  real: false
+  reason: SPA catch-all returns index.html, not a discovery document
+- path: /.well-known/api-catalog
+  host: app.onfrontiers.com
+  status: 200
+  real: false
+  reason: SPA catch-all returns index.html, not an API catalog
+- path: /llms.txt
+  host: www.onfrontiers.com
+  status: 200
+  real: true
+  file: ../llms/onfrontiers-llms.txt
